@@ -2,7 +2,7 @@
 
 import sys
 # TODO
-# converter string em formato de lista em list
+
 
 """
 cont = 0

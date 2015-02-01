@@ -10,7 +10,10 @@ Feel free to Fork em Push
 
 ---
 > Run all tests: 
+
 ```sh
+
+
 
 /tdd-try/tests$ python3 -m unittest discover --pattern=*_test.py -v
 

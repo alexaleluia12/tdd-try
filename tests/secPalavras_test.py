@@ -40,4 +40,4 @@ class SecPalavasTest(unittest.TestCase):
     
 if __name__ == "__main__":
     unittest.main()        
-    # rum: $ python3 secPalavras.py -v
+    # run: $ python3 secPalavras.py -v

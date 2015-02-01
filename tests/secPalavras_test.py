@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-#-*- coding:utf-8 -*-
+#!/usr/bin/env python3
+
 
 import unittest
 import os, sys
@@ -7,6 +7,8 @@ import os, sys
 sys.path.insert(1, os.path.join('..'))
 import mod.secPalavras as secp
 from mod.myErrorException import FileEmpty
+
+
 
 FILE = 'aux/romeo.txt'
 FILEEMP = 'aux/music.txt'
@@ -28,7 +30,14 @@ class SecPalavasTest(unittest.TestCase):
     def test_getWin(self):
         testDict = {'it':2, 'no': 1, 'can': 1}
         self.assertTupleEqual(secp.getWin(testDict), ('it', 2))
+    
+    #--
+    def test_main(self):        
+        self. assertIsInstance(secp.main(FILE), tuple)
+        
+        
 
     
 if __name__ == "__main__":
     unittest.main()        
+    # rum: $ python3 secPalavras.py -v

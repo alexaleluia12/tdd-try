@@ -1,7 +1,10 @@
-#!/usr/bin/env python
-#-*- coding:utf-8 -*-
+#!/usr/bin/env python3
 
-import myErrorException as myerr
+
+
+from . import myErrorException as myerr # import no corrente diretorio
+import sys
+
 
 """
 name = raw_input('Enter file:')
@@ -26,6 +29,8 @@ print bigword, bigcount
 
 # getWin(dict)→ tuple
 
+# main(str)→ str
+
 def getFile(filename):
     with open(filename, 'r') as f:
         content = f.read()
@@ -42,9 +47,18 @@ def mapWordCount(valStr):
     
 def getWin(valDict):
     maxValue = max(valDict.values())
-    for k, v in valDict.items():
+    for e in valDict.items():
+        k, v = e
         if v == maxValue:
             return (k, v)
+          
 
+def main(strFileName):
+    val = mapWordCount(getFile(strFileName))
+    return getWin(val)
+              
 
+if __name__ == "__main__":
+   
+    print(main(sys.argv[1]))
 

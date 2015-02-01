@@ -6,5 +6,5 @@ Most of the code came form [Python for Informatics](http://www.pythonlearn.com/b
 
 Feel free to Fork em Push
 
-> Work on Python3
+> Works on Python3
 

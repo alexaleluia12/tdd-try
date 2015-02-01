@@ -8,3 +8,10 @@ Feel free to Fork em Push
 
 > Works on Python3
 
+> Run all tests: 
+´´´sh
+
+/tdd-try/tests$ python3 -m unittest discover --pattern=*_test.py -v
+
+
+´´´

@@ -10,8 +10,8 @@ from mod.myErrorException import FileEmpty
 
 
 
-FILE = 'aux/romeo.txt'
-FILEEMP = 'aux/music.txt'
+FILE =  os.path.join('aux', 'romeo.txt')
+FILEEMP = os.path.join('aux', 'music.txt')
 
 class SecPalavasTest(unittest.TestCase):    
 
@@ -40,4 +40,5 @@ class SecPalavasTest(unittest.TestCase):
     
 if __name__ == "__main__":
     unittest.main()        
-    # run: $ python3 secPalavras.py -v
+    # run test: $ python3 secPalavras_test.py -v
+    

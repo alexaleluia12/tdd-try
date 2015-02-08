@@ -19,6 +19,7 @@ class ForExample1Test(unittest.TestCase):
     
     def test_convertToList(self):
         self.assertListEqual(fore.convertToList('[2,2,2]'), [2,2,2])
+        self.assertListEqual(fore.convertToList('[2, 2, 2, 490,  39 ]'), [2, 2, 2, 490, 39])
         
     def test_main(self):
         self.assertDictEqual(

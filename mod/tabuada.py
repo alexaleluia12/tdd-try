@@ -24,7 +24,7 @@ for i in range(10):
 
 # validarEntrada(val, type,[intervalo])→ boll (intervalo na forma (inicio, fim) inclusivo)
 
-# getTabuada(val, intervalo)→ list (lista de tupla onde cada elemento tem forma '(a, b, c)')
+# getTabuada(val, intervalo)→ generator (lista de tupla onde cada elemento tem forma '(a, b, c)')
 # intervalo -> inclusivo forma: '(inicio, fim)'
 
 def validaEntrada(val, vtype, intervalo=None):
@@ -38,11 +38,10 @@ def validaEntrada(val, vtype, intervalo=None):
     return valBoll and intervaloBoll    
         
     
-def getTabuada(val, intervalo):
-    lt = []
+def getTabuada(val, intervalo):    
     for i in range(intervalo[0], intervalo[1] + 1):
-        lt.append((val, i, i * val))
-    return lt
+        yield (val, i, i * val)
+    
     
 if __name__ == '__main__':
     val = int(sys.argv[1])

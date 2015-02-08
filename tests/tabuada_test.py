@@ -25,11 +25,10 @@ class TabuadaTest(unittest.TestCase):
     def test_validarEntrada(self):
         self.assertRaises(TypeError, tbm.validaEntrada, 'c', ('a', 'e'))
         self.assertTrue( tbm.validaEntrada([5,9], list, ([2, 1], [10, 12])) )# poliformismo 
-        
-    
+
     #---
     def test_getTabuada(self):
-        self.assertEqual(tbm.getTabuada(3, (1, 2)), [(3, 1, 3), (3, 2, 6)]) 
+        self.assertSequenceEqual( list(tbm.getTabuada(3, (1,2))), [(3, 1, 3), (3, 2, 6)] ) # converto o generator in list
 
 if __name__ == '__main__':
     unittest.main()

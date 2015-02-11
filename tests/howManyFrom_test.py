@@ -11,7 +11,7 @@ class HowManyFromTest(unittest.TestCase):
     
     def test_amountFrom(self):
         self.assertListEqual(
-             hmf.amountFrom(['kdi d joe', 'From xckco@a', 'dkkk do'])
+             hmf.iterableFrom(['kdi d joe', 'From xckco@a', 'dkkk do'])
             , 
              ['From xckco@a']   
         )

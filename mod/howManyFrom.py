@@ -23,12 +23,12 @@ for k in li_email:
     print k    
 """
 
-# amountFrom(interable)→ list, (lilhas que comecam com 'From ..'   'From rjlowe@iupui.edu Fri Jan  4 15:46:24 2008')
+# iterableFrom(interable)→ list, (lilhas que comecam com 'From ..'   'From rjlowe@iupui.edu Fri Jan  4 15:46:24 2008')
 
-def amountFrom(interable):
+def iterableFrom(iterable):
     regex = r'\bFrom .+' # comeca com 'From ' e termina com qualquer coisa
     lst = []
-    for el in interable:
+    for el in iterable:
         match = re.search(regex, el)
         if match:
             lst.append(match.string)
@@ -38,7 +38,7 @@ if __name__ == '__main__':
     FILE = 'static/mbox-short.txt'
     
     with open(FILE) as f:
-        lstFrom = amountFrom(f)
+        lstFrom = iterableFrom(f)
     
     print('all start with "From ": {0}\n'.format(len(lstFrom)))
     for el in lstFrom:

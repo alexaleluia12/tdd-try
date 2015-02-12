@@ -61,4 +61,5 @@ def main(strFileName):
 if __name__ == "__main__":
    
     print(main(sys.argv[1]))
+    # run: python3 secPalavras.py pathYourFile
 

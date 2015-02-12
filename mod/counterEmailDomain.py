@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import os
+
 try:
     import axCounter
 except:
@@ -46,8 +48,8 @@ def getAllEmailDomain(iterable):
         assert aroba != -1, "the elemento in iterable showd have any '@' "
         yield el[aroba + 1: ]
     
-if __name__ == '__main__':
-    FILE = 'static/mbox-short.txt'
+if __name__ == '__main__':    
+    FILE = os.path.join('static', 'mbox-short.txt')
     regexFrom = r'\bFrom .+' # 'From ' seguido de qualquer coisa
     with open(FILE) as f:
         fromContent = axCounter.iterableN(f, regexFrom)

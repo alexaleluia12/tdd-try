@@ -3,7 +3,7 @@
 import sys
 
 # TODO
-# quando chegar em casa implementar a funcao countLine com reduce 
+# 
 
 """
 
@@ -29,7 +29,7 @@ arqui.close()
 def countLine(fileName):
     count = 0
     try:
-        with open(fileName, 'r') as f:
+        with open(fileName) as f:
             for line in f:
                 count += 1
         return count

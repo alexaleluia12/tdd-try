@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
 import collections
+import os
 try:
-    import howManyFrom as hmf
+    from . import axCounter
 except:
-    from . import howManyFrom as hmf
+    import axCounter 
 
 """
 fi_email = open('mbox-short.txt', 'r')
@@ -23,26 +24,16 @@ for i in fi_email:
 
 print di_diasSemana    
 """
-# mapCounter(iterable)→ dict parecido com: {'Fri': 89, 'Thu': 90,...}, 
-#    interable de ser parecido com ['v1', 'v1', 'v2', ...]
-
-# getWeekDays(interable)→ generator, onde cada elementos e um dia da 
-#    semana (pode haver repetido)
-
-def mapCounter(iterable):
-    return dict(collections.Counter(iterable))
-    
-def getWeekDays(iterable):
-    for i in iterable:
-        yield i.split()[2]
-    
+# the axCounter module handle with all this thing
+ 
 if __name__ == '__main__':
-    FILE = 'static/mbox-short.txt'
+    FILE = os.path.join('static', 'mbox-short.txt')
+    regex = r'\bFrom .+' # comeca com 'From ' e termina com qualquer coisa
     with open(FILE) as f:
-        lstContent = hmf.iterableFrom(f)
+        lstContent = axCounter.iterableN(f, regex)
             
-    weekdays = getWeekDays(lstContent)
-    daysCounts = mapCounter(weekdays)
+    weekdays = axCounter.getAllPosionedElement(lstContent, 2)
+    daysCounts = axCounter.mapCounter(weekdays)
     print(daysCounts)
         
 

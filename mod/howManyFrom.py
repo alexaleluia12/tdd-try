@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import re
+import os
 
 """
 f_CurtoBox = open('static/mbox-short.txt')
@@ -35,8 +36,7 @@ def iterableFrom(iterable):
     return lst        
     
 if __name__ == '__main__':
-    FILE = 'static/mbox-short.txt'
-    
+    FILE = os.path.join('static', 'mbox-short.txt')
     with open(FILE) as f:
         lstFrom = iterableFrom(f)
     

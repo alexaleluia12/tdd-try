@@ -50,6 +50,20 @@ class AxCounterTest(unittest.TestCase):
             ['366@gmail.com', '8934@hotmail.com'] 
         )   
                 
+    def test_integration(self):
+        lst = [
+            'From time a@x.com 3772',
+            'any uk 366@gmail.com',
+            'x US BR to fernada',
+            'From all a@hotmail.com 122',
+            'From branch a@hotmail.com 3',
+        ]
+        lstFrom = axCounter.iterableN(lst, r'\bFrom .+')
+        lstEmail = axCounter.getAllPosionedElement(lstFrom, 2)
+        self.assertEqual(
+            axCounter.mapCounter(lstEmail),
+            {'a@hotmail.com': 2, 'a@x.com': 1}
+        )
 
 if __name__ == '__main__':
     unittest.main()

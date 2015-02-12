@@ -23,13 +23,13 @@ for i in fi_email:
 
 print di_diasSemana    
 """
-# mapDayWeekCount(iterable)→ dict parecido com: {'Fri': 89, 'Thu': 90,...}, 
-#    interable de ser parecido com ['Thu', 'Thu', 'Fri']
+# mapCounter(iterable)→ dict parecido com: {'Fri': 89, 'Thu': 90,...}, 
+#    interable de ser parecido com ['v1', 'v1', 'v2', ...]
 
 # getWeekDays(interable)→ generator, onde cada elementos e um dia da 
 #    semana (pode haver repetido)
 
-def mapDayWeekCount(iterable):
+def mapCounter(iterable):
     return dict(collections.Counter(iterable))
     
 def getWeekDays(iterable):
@@ -42,7 +42,7 @@ if __name__ == '__main__':
         lstContent = hmf.iterableFrom(f)
             
     weekdays = getWeekDays(lstContent)
-    daysCounts = mapDayWeekCount(weekdays)
+    daysCounts = mapCounter(weekdays)
     print(daysCounts)
         
 

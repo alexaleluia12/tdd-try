@@ -10,7 +10,9 @@ class DayEmailCountTest(unittest.TestCase):
     
     def test_mapDayWeekCount(self):
         lst = ['Thu','Thu','Fri']
-        self.assertEqual(dmc.mapDayWeekCount(lst), {'Thu': 2, 'Fri': 1})
+        lst2 = ['a@g.com', 'an@ufu.obr', 'x@i.com']
+        self.assertEqual(dmc.mapCounter(lst), {'Thu': 2, 'Fri': 1})
+        self.assertEqual(dmc.mapCounter(lst2), {'a@g.com': 1, 'an@ufu.obr': 1, 'x@i.com': 1})
     
     def test_getWeekDays(self):
         lst = [

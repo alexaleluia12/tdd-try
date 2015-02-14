@@ -17,18 +17,20 @@ print vetor
     
 """
 
-# multElementos(inter, val)→ list (retorna uma lista onde cada elemento foi multiplicado por val)
+# timesEl(list, intValue)
+#    return a list where each element was times by intValue
 
-def multElementos(vInter, val): 
-    return list(map(lambda x: x * val, vInter))
+
+def timesEl(vIter, val): 
+    return list(map(lambda x: x * val, vIter))
     
 if __name__ == '__main__':
     val, fator = sys.argv[1], int(sys.argv[2])
     val = fore.convertToList(val)
-    print("{0} * {1} = ".format(val, fator))
-    pprint.pprint(multElementos(val, fator))
+    print("{0} * {1} = ".format(val, fator), end='')
+    pprint.pprint(timesEl(val, fator))
     
-    # run: $ python3 multElementos.py [3,4,5] 5
+    # run: $ python3 listTimes.py [3,4,5] 5
 
 
 

@@ -24,7 +24,8 @@ arqui.close()
 """
 
 
-# countLine(fileName)→ int (numero de linha de arquivo), -1 se o arquivo nao foi encontrado
+# countLine(fileName)
+#    return a int relative to number of lines in file, -1 whether the file was not found
 
 def countLine(fileName):
     count = 0

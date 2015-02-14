@@ -11,6 +11,7 @@ from mod.myErrorException import FileEmpty
 
 
 FILE =  os.path.join('aux', 'romeo.txt')
+FILE2 = os.path.join('aux', 'self.txt')
 FILEEMP = os.path.join('aux', 'music.txt')
 
 class SecPalavasTest(unittest.TestCase):    
@@ -33,7 +34,8 @@ class SecPalavasTest(unittest.TestCase):
     
     #--
     def test_main(self):        
-        self. assertIsInstance(secp.main(FILE), tuple)
+        self.assertIsInstance(secp.main(FILE), tuple)
+        self.assertTupleEqual(secp.main(FILE2), ('self', 4))
         
         
 

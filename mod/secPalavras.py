@@ -44,7 +44,9 @@ def getFile(filename):
     
 def mapWordCount(valStr):
     dictRet = {}
-    for e in valStr.split():
+    tabTrans = str.maketrans('().:=_,', ' '*7)
+    lst = valStr.translate(tabTrans).split()
+    for e in lst:
         dictRet[e] = dictRet.get(e, 0) + 1
     return dictRet
     

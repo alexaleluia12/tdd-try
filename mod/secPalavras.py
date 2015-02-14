@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
 
-
-from . import myErrorException as myerr # import no corrente diretorio
+try:
+    from . import myErrorException as myerr
+except:
+    import myErrorException as myerr
+    
 import sys
 
 
@@ -35,7 +38,7 @@ def getFile(filename):
     with open(filename, 'r') as f:
         content = f.read()
         if len(content) == 0:
-            raise myerr.FileEmpty('o arquivo esta vazio: ' + filename )
+            raise myerr.FileEmpty('the file is empty: ' + filename )
         
         return content
     

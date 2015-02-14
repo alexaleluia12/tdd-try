@@ -21,7 +21,7 @@ class WriteInFileTest(unittest.TestCase):
 
 class TestHelperFunction(unittest.TestCase):
 
-    def test_excludeFile(self):# essa eh uma funcao definida nesse mesmo arquivo
+    def test_excludeFile(self):# this function was definid in this file
         open('aux/x.txt', 'w').close()
         self.assertTrue(excludeFile('aux/x.txt'))    
             

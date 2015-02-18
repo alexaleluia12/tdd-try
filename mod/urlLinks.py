@@ -2,18 +2,13 @@
 
 import re
 import urllib.request
-"""
-import urllib
-import re
-url = raw_input('Enter - ')
-html = urllib.urlopen(url).read()
-links = re.findall('href="(http://.*?)"', html) # return a iterable
 
-for link in links:
-    print link    
-"""
+# TODO
+
+
+
 # pageContent(url)
-#    return a generator were element is an line of the page
+#    return a generator where element is an line of the page
 
 # linksPage(iterable)
 #    return a iterable with all links in iterator
@@ -22,7 +17,7 @@ for link in links:
 
 def pageContent(url):
     response = urllib.request.urlopen(url)
-    if response.status == 200:
+    if response:
         for i in response:
             yield i.decode()
 
@@ -33,7 +28,7 @@ def linksPage(iterable):
     return re.findall(regex, strContent) 
     
 if __name__ == '__main__':
-    pass
+    print(list(pageContent('http://www.dr-chuck.combage1.htm')))
     
 
         

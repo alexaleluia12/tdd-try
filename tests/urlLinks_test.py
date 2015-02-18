@@ -2,9 +2,17 @@
 
 import unittest
 import sys
+import urllib
 
 sys.path.insert(1, '..')
 from mod import urlLinks
+
+"""
+Case this code not work check Your DNS internet service. 
+see: http://en.wikipedia.org/wiki/DNS_hijacking
+
+I indicate wear http://opendns.com/ 
+"""
 
 
 # this test will be slow because it get resource on web
@@ -38,12 +46,13 @@ class UrlLinksTest(unittest.TestCase):
         )
     
     def test_pageContentFail(self):
-        badUlr = 'http://www.dr-chuck.com/bage1.htm'
-        error = urlLinks.pageContent(' ')
-        self.assertEqual(error, '')
+        badUlr = "http://www.dfoijoeijfpaoijf.combage1.htm"
+        with self.assertRaises(urllib.error.URLError) as er: # the code inseide 'with' should raise urllib.error.URLError to pass
+            e = list(urlLinks.pageContent("http://www.dfoijoeijfpaoijf.combage1.htm"))
+            
         
     def test_integration(self):
-        url = 'http://www.dr-chuck.com/page1.htm' # this url need work
+        url = 'http://www.google.com/' # this url need be valid
         page = list(urlLinks.pageContent(url))
         links = urlLinks.linksPage(page)
         self.assertEqual(links, ['http://www.dr-chuck.com/page2.htm'])

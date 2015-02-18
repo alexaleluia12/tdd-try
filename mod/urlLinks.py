@@ -2,7 +2,7 @@
 
 import re
 import urllib.request
-
+import codecs
 # TODO
 
 
@@ -19,7 +19,8 @@ def pageContent(url):
     response = urllib.request.urlopen(url)
     if response:
         for i in response:
-            yield i.decode()
+            yield codecs.decode(i, 'utf8', 'ignore')
+            
 
 
 def linksPage(iterable):

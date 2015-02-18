@@ -52,10 +52,12 @@ class UrlLinksTest(unittest.TestCase):
             
         
     def test_integration(self):
-        url = 'http://www.google.com/' # this url need be valid
+        url = 'http://www.google.com.br/' # this url need be valid
+        aboutBrGoogle = 'http://www.google.com.br/history/optout?hl=pt-BR'        
         page = list(urlLinks.pageContent(url))
         links = urlLinks.linksPage(page)
-        self.assertEqual(links, ['http://www.dr-chuck.com/page2.htm'])
+        self.assertTrue(aboutBrGoogle in links)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -23,8 +23,11 @@ invertida = delimiter.join(pa_invertida)  # vai juntar os elementos da lista par
 print invertida
     
 """
-# checkWord(string)→ string, se ela nao tiver nenhum numero e tamanho maior que zero Caso contrario retorna False
-# invert(string)→ string invertida
+# checkWord(string)
+#    return a the same string whether it have no number and the length is greater than zero. Otherwise return False
+
+# invert(string)
+#    return the string inverted. 'oi' ->  'io'
 
 def checkWord(valStr):
     regex = r'\d+'

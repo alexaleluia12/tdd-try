@@ -38,11 +38,12 @@ class UrlLinksTest(unittest.TestCase):
             'alex programing',
             '<p><a href="http://www.google.com/">know</a></p>',
             'brasil is a good place'
-            "<li><a href='http://www.g1.globo.com/'>news</a></li>"
+            "<li><a href='http://www.g1.globo.com/'>news</a></li>",
+            '<h1><a href="https://www.bbc.com/">bbc</a></h1>'
         ]
         self.assertEqual(
             urlLinks.linksPage(lst), 
-            ["http://www.google.com/", "http://www.g1.globo.com/"]
+            ["http://www.google.com/", "http://www.g1.globo.com/", "https://www.bbc.com/"]
         )
     
     def test_pageContentFail(self):

@@ -5,6 +5,16 @@ import urllib.request
 import codecs
 # TODO
 
+"""
+import urllib
+import re
+url = raw_input('Enter - ')
+html = urllib.urlopen(url).read()
+links = re.findall('href="(http://.*?)"', html) # retorna uma lista
+
+for link in links:
+    print link    
+"""
 
 
 # pageContent(url)
@@ -24,12 +34,18 @@ def pageContent(url):
 
 
 def linksPage(iterable):
-    regex = """href=["'](http://.*?)["']""" # return just inside the ()
+    regex = r"""href=["'](https?://.*?)["']""" # suport http and https
     strContent = " ".join(iterable)
     return re.findall(regex, strContent) 
     
 if __name__ == '__main__':
-    print(list(pageContent('http://www.dr-chuck.combage1.htm')))
+    url = input('Enter with url like http://google.com\n ->: ')
+    links = linksPage(pageContent(url))
+    print('###')
+    for link in links:
+        print(link)
+        
+    # run: $ python3 urlLinks.py
     
 
         

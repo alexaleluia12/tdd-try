@@ -6,7 +6,7 @@ Most of the code came from [Python for Informatics](http://www.pythonlearn.com/b
 
 Feel free to Fork em Push
 
-> Works on Python3
+> Require Python >= 3.3
 
 ---
 > Run all tests: 

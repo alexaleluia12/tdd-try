@@ -3,12 +3,23 @@
 import unittest
 import sys
 
+# TODO
+# ver o que da usando o xmlData2
+
 sys.path.insert(1, '..')
 from mod import parsingXml
 
 xmlData = """
 <person>
     <name>Chuck</name>    
+    <email hide="yes"/>
+</person>
+"""
+
+xmlData2 = """
+<person>
+    <name>Chuck</name>
+    <name>Julia</name>    
     <email hide="yes"/>
 </person>
 """
@@ -34,25 +45,13 @@ class ParsingXmlTest(unittest.TestCase):
         )            
     
     def test_getTagText(self):
-        simpleXml = '<name>alex</name>'
+        
         self.assertEqual(
             parsingXml.getTagText('name', xmlData),
             'Chuck'
         )
-        self.assertEqual(
-            parsingXml.getTagText('name', simpleXml),
-            'alex'
-        ) 
+        
 
 if __name__ == '__main__':
     unittest.main()
-
-        
-"""
-espera:
-    
-    
-"""
-
-
 

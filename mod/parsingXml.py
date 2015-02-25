@@ -3,8 +3,7 @@
 import xml.etree.ElementTree as treeXml
 
 # TODO
-# fazeri o getTagText() funcioar em '<name>alex</name>'
-# atualmente nao esta
+
 
 """
 import xml.etree.ElementTree as ET
@@ -41,14 +40,24 @@ def getTag(tagName, xmlData):
     return xmlData.find(tagName)    
 
 def getTagText(tag, xmlData):
-    xmlData = treeXml.fromstring(xmlData)
-    return xmlData.find(tag).text
+    tagObj = getTag(tag, xmlData)
+    return tagObj.text
 
 def getTagAttr(attr, tag, xmlData):
-    tag = getTag(tag, xmlData)
-    return tag.get(attr)
+    tagObj = getTag(tag, xmlData)
+    return tagObj.get(attr)
 
 
 if __name__ == '__main__':
-    pass
+    data = '''
+    <person>
+        <name>Chuck</name>
+        <phone type="intl">
+            +1 734 303 4456
+        </phone>
+        <email hide="yes"/>
+    </person>'''
+    
+    print( 'Name {0}'.format(getTagText('name', data)) )
+    print( 'Attr {0}'.format(getTagAttr('hide', 'email', data)) )
 

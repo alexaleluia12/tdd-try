@@ -38,19 +38,20 @@ for k in di_localEmail:
 print di_local
 
 """
-# getAllEmailDomain(iterable)→ retorn um generator, onde cada elemento 
-#    contem apenas o dominio do email in relacao ao iterable
+# getAllEmailDomain(iterable)→ return a generator
+#    where each element just have the email domain
 #    [dois@gmail.com] -> [gmail.com]
 
 def getAllEmailDomain(iterable):
-    for el in iterable:
-        aroba = el.find('@')
+    """ Return a generator of email domain """
+    for elem in iterable:
+        aroba = elem.find('@')
         assert aroba != -1, "the elemento in iterable showd have any '@' "
-        yield el[aroba + 1: ]
+        yield elem[aroba + 1: ]
     
 if __name__ == '__main__':    
     FILE = os.path.join('static', 'mbox-short.txt')
-    regexFrom = r'\bFrom .+' # 'From ' seguido de qualquer coisa
+    regexFrom = r'\bFrom .+' # 'From ' folowed by any thing
     with open(FILE) as f:
         fromContent = axCounter.iterableN(f, regexFrom)
 

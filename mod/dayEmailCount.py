@@ -28,7 +28,7 @@ print di_diasSemana
  
 if __name__ == '__main__':
     FILE = os.path.join('static', 'mbox-short.txt')
-    regex = r'\bFrom .+' # comeca com 'From ' e termina com qualquer coisa
+    regex = r'\bFrom .+' # start with 'From ' and end with any thing
     with open(FILE) as f:
         lstContent = axCounter.iterableN(f, regex)
             

@@ -14,8 +14,15 @@ class CounterEmailDomainTest(unittest.TestCase):
             list(ced.getAllEmailDomain(lst)),
             ['gmail.com', 'gmail.com', 'hotmail.com']
         )
+    
+    def test_getAllEmailDomainFail(self):
+        lst = ['any@gmail.com', 'x#hotmail.com']
+        with self.assertRaises(AssertionError) as er:
+            self.assertEqual(
+                list(ced.getAllEmailDomain(lst)),
+                ['I hope this test fail']
+            )
+        
 
 if __name__ == '__main__':
-    unittest.main()
-
-        
+    unittest.main()       

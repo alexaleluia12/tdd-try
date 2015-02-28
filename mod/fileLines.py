@@ -2,11 +2,7 @@
 
 import sys
 
-# TODO
-# 
-
 """
-
 entradaUsuarioArquivo = raw_input("Digite o nome do arquivo: ")
 # foi secessario contatenar strigs para ter a entrada no formato de caminhos.
 try:
@@ -19,29 +15,21 @@ cont = 0
 for line in arqui:
     cont = cont + 1
 print "quantidade de linhas: ", cont
-arqui.close()
-    
+arqui.close() 
 """
 
+# countLine(iterableFile)
+#    return the number of lines in iterableFile
 
-# countLine(fileName)
-#    return a int relative to number of lines in file, -1 whether the file was not found
-
-def countLine(fileName):
-    count = 0
-    try:
-        with open(fileName) as f:
-            for line in f:
-                count += 1
-        return count
-    except FileNotFoundError as err:
-        return -1 
+def countLine(iterableFile):
+    return len(list(iterableFile))
         
-
+        
 if __name__ == '__main__':
     fileName = sys.argv[1]
-    print("> {0}".format(countLine(fileName)))
+    with open(fileName) as f:
+        numberLines = countLine(f) # the f (file object) suport interation
+    print("{0}> {1}".format(fileName, numberLines))
     
-    # run: python3 linhasArquivo.py pathFile
+    # run: python3 fileLines.py pathFile
 
-        

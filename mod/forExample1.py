@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
 import sys
-# TODO
-
 
 """
 cont = 0
@@ -31,11 +29,10 @@ def main(valList):
 
 def convertToList(valStr):
     strMap = str.maketrans("'[]", '   ')# in py2 string.maketrans(..)
-    innerList = valStr.translate(strMap).strip().split(',') # os elemento ainda sao string        
-    return list(map(lambda x: int(x), innerList)) # map no python3 nao trabalha do mesmo jeito do python2
-    
-        
-    
+    innerList = valStr.translate(strMap).strip().split(',') 
+    return list(map(lambda x: int(x), innerList)) 
+    # map in python3 work different to python2 (return a generator)
+ 
     
 if __name__ == '__main__':
     val = sys.argv[1]
@@ -44,10 +41,7 @@ if __name__ == '__main__':
     except ValueError as verr:
         print('Only suport int \n{0}'.format(verr))
          
-    msg = "Amount of elements: {0}\nSum of all: {1}"    
-    print(msg.format(*main(val).values()))
+    msg = "Amount of elements: {amount}\nSum of all: {count}"    
+    print(msg.format(**main(val)))
+    # run: python3 forExample1.py [1,2,3]
     
-    
-    	
-
-          

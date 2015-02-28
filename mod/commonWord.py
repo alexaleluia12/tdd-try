@@ -1,13 +1,6 @@
 #!/usr/bin/env python3
 
-
-try:
-    from . import myErrorException as myerr
-except:
-    import myErrorException as myerr
-    
 import sys
-
 
 """
 name = raw_input('Enter file:')
@@ -26,22 +19,6 @@ for word,count in counts.items():
 print bigword, bigcount
 	
 """
-# getFile(str)→ string, content of file
-
-# mapWordCount(str)→ dict
-
-# getWin(dict)→ tuple
-
-# main(str)→ str
-
-def getFile(filename):
-    """ Return the content(string) file from the name file 'filename' """
-    with open(filename, 'r') as f:
-        content = f.read()
-        if len(content) == 0:
-            raise myerr.FileEmpty('the file is empty: ' + filename )
-        
-        return content
     
 def mapWordCount(valStr):
     """Return a dict 
@@ -62,15 +39,16 @@ def getWin(valDict):
     Return the tuple (key, value) from valDict where the value
     is the maximum value found in valDict.
     """
+    assert bool(valDict) == True, "The dict is empty"
     maxValue = max(valDict.values())
-    for e in valDict.items():
-        k, v = e
+    for k, v in valDict.items():
         if v == maxValue:
             return (k, v)
           
 
 def main(strFileName):
-    val = mapWordCount(getFile(strFileName))
+    content = open(strFileName).read()
+    val = mapWordCount(content)
     return getWin(val)
               
 

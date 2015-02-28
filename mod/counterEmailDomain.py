@@ -45,9 +45,9 @@ print di_local
 def getAllEmailDomain(iterable):
     """ Return a generator of email domain """
     for elem in iterable:
-        aroba = elem.find('@')
-        assert aroba != -1, "the elemento in iterable showd have any '@' "
-        yield elem[aroba + 1: ]
+        atSign = elem.find('@')
+        assert atSign != -1, "the element in iterable should have any '@' "
+        yield elem[atSign + 1: ]
     
 if __name__ == '__main__':    
     FILE = os.path.join('static', 'mbox-short.txt')
@@ -59,4 +59,6 @@ if __name__ == '__main__':
     emailDomains = getAllEmailDomain(emails)
     contedDomain = axCounter.mapCounter(emailDomains)
     print(contedDomain)
+    
+    # run: python3 counterEmailDomain.py
 

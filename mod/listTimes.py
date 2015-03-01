@@ -8,7 +8,6 @@ try:
 except:
     import forExample1 as fore
 
-
 """
 vetor = [2, 4, 6]
 for i in range(len(vetor)):
@@ -17,22 +16,18 @@ print vetor
     
 """
 
-# timesEl(list, intValue)
-#    return a list where each element was times by intValue
+# timesEl(valList, intValue)
+#    return a list where each element is times by intValue
 
-
-def timesEl(vIter, val): 
+def timesElements(vIter, val): 
     return list(map(lambda x: x * val, vIter))
     
 if __name__ == '__main__':
-    val, fator = sys.argv[1], int(sys.argv[2])
+    val = sys.argv[1]
+    factor = int(sys.argv[2])
     val = fore.convertToList(val)
-    print("{0} * {1} = ".format(val, fator), end='')
-    pprint.pprint(timesEl(val, fator))
+    print("{0} * {1} = ".format(val, factor), end='')
+    pprint.pprint(timesElements(val, factor))
     
     # run: $ python3 listTimes.py [3,4,5] 5
-
-
-
-
     

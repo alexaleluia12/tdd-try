@@ -10,7 +10,7 @@ li_email = list()
 for i in f_CurtoBox:
     
     k = i.split()
-    if len(k) == 0: # eh necessario comparara o tamanho pois caso nao tenha nenhum da problema na linha de baixo. idex out of range
+    if len(k) == 0: 
         continue
     
     if k[0] == 'From':
@@ -24,24 +24,31 @@ for k in li_email:
     print k    
 """
 
-# iterableFrom(interable)→ list, (lilhas que comecam com 'From ..'   'From rjlowe@iupui.edu Fri Jan  4 15:46:24 2008')
+# iterableFrom(interable)→ list, 
+#   where each element is like
+#   'From rjlowe@iupui.edu Fri Jan  4 15:46:24 2008'
 
 def iterableFrom(iterable):
-    regex = r'\bFrom .+' # comeca com 'From ' e termina com qualquer coisa
+    regex = r'\bFrom .+'
     lst = []
     for el in iterable:
         match = re.search(regex, el)
         if match:
             lst.append(match.string)
     return lst        
+
+def amount(lst):
+    return len(lst)
     
 if __name__ == '__main__':
     FILE = os.path.join('static', 'mbox-short.txt')
     with open(FILE) as f:
         lstFrom = iterableFrom(f)
     
-    print('all start with "From ": {0}\n'.format(len(lstFrom)))
+    amt = amount(lstFrom)
+    print('all start with "From ": {0}\n'.format(amt))
     for el in lstFrom:
         print(el)
     
+    # run: python3 howManyFrom.py
 

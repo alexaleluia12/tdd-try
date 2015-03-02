@@ -16,10 +16,17 @@ for link in links:
 """
 
 # pageContent(url)
-#    return a generator where element is an line of the page
+#    return a generator where element is a line of the page
 
 # linksPage(iterable)
-#    return a iterable with all links in iterator
+#    return a iterable with all links
+
+"""
+Case this code not work check Your DNS internet service. 
+see: http://en.wikipedia.org/wiki/DNS_hijacking
+
+I indicate wear http://opendns.com/ 
+"""
 
 def pageContent(url):
     response = request.urlopen(url)

@@ -3,8 +3,6 @@
 import unittest
 import sys
 
-# TODO
-# ver o que da usando o xmlData2
 
 sys.path.insert(1, '..')
 from mod import parsingXml
@@ -25,18 +23,11 @@ xmlData2 = """
 """
 
 class ParsingXmlTest(unittest.TestCase):
-    
    
+    def test_getTag(self):# posso adicionar mais cosas a esse teste
+        tagObj = parsingXml.getTag('name', xmlData)
+        self.assertTrue(isinstance(tagObj, parsingXml.treeXml.Element))
         
-    def test_getTag(self):
-        self.assertEqual(
-            type(parsingXml.getTag('name', xmlData)),
-            parsingXml.treeXml.Element
-        )
-        # this is a bit tricky but is like
-        # >>> int == type(1) 
-        # True
-
             
     def test_getTagAttr(self):
         self.assertEqual(
@@ -45,11 +36,9 @@ class ParsingXmlTest(unittest.TestCase):
         )            
     
     def test_getTagText(self):
-        
-        self.assertEqual(
-            parsingXml.getTagText('name', xmlData),
-            'Chuck'
-        )
+        self.assertEqual(parsingXml.getTagText('name', xmlData), 'Chuck')
+        self.assertEqual(parsingXml.getTagText('name', xmlData2), 'Chuck')
+        # return the first tag 'name' 
         
 
 if __name__ == '__main__':

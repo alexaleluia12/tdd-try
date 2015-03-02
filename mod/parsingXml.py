@@ -2,9 +2,6 @@
 
 import xml.etree.ElementTree as treeXml
 
-# TODO
-
-
 """
 import xml.etree.ElementTree as ET
 data = '''
@@ -58,6 +55,8 @@ if __name__ == '__main__':
         <email hide="yes"/>
     </person>'''
     
-    print( 'Name {0}'.format(getTagText('name', data)) )
-    print( 'Attr {0}'.format(getTagAttr('hide', 'email', data)) )
+    print('Name: {0}'.format(getTagText('name', data)))
+    print('Attr of email.hide: {0}'.format(getTagAttr('hide', 'email', data)))
+    
+    # run: python3 parsingXml.py
 

@@ -22,28 +22,32 @@ for i in range(10):
     
 """
 
-# sanityEnter(val, type[,interval])
+# sanityEnter(val, vtype[,interval])
 #    return a boll value True if right False otherwise 
+#    if interval is given it also check whether val is between interval
 #    (val value that we want check)
-#    (type be class built-in python like str, int, dict)
+#    (vtype be class built-in python like str, int, dict)
 #    (interval like this (begin, end) inclusive integers)
 
-# getTimesTab(val, interval)→ 
+# getTimesTab(val, interval=(1, 10))
 #    return a generator where each is like this (a, b, c)
 #    ( interval -> inclusive like: (begin, end) )
 
-def sanityEnter(val, vtype, inter=None):
+def sanityEnter(val, vtype, interval=None):
     if type(str) != type(vtype):#
-        raise( TypeError("{0} invalid type 'try: int or str'".format(repr(vtype))) )
-    valBoll = type(val) == vtype
-    if inter == None:
-        return valBoll
-    assert type(val) == type(inter[0]) == type(inter[1]), "the interval need to be the same type"
-    intervalBoll = val >= inter[0] and val <= inter[1]
-    return valBoll and intervalBoll    
+        raise(TypeError("{0} invalid type 'try: \
+              int or str'".format(repr(vtype))))
+    valBool = type(val) == vtype
+    if interval == None:
+        return valBool
+    assert type(val) == type(interval[0]) == type(interval[1]), "the \
+                                    interval need to be the same type"
+                           
+    intervalBool = val >= interval[0] and val <= interval[1]
+    return valBool and intervalBool    
         
     
-def getTimesTab(val, interval):    
+def getTimesTab(val, interval=(1, 10)):    
     for i in range(interval[0], interval[1] + 1):
         yield (val, i, i * val)
     
@@ -51,9 +55,8 @@ def getTimesTab(val, interval):
 if __name__ == '__main__':
     val = int(sys.argv[1])
     if sanityEnter(val, int, (1, 10)):
-        for el in getTimesTab(val, (1, 10)):
+        for el in getTimesTab(val):
             print(" {0} x {1} = {2}".format(*el))
 
-    # run: python3 tabuada.py number
+    # run: python3 timesTable.py number
   
-     

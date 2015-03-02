@@ -9,7 +9,8 @@ c = c.rstrip()
 if re.search('^X\S*: [0-9.]+', c) :
     print c
 
-x = re.findall('^X\S*: ([0-9.]+)', c)  # pega apenas o numeros. Ou seja o que esta entre parenteses
+x = re.findall('^X\S*: ([0-9.]+)', c)  # pega apenas o numeros. 
+# Ou seja o que esta entre parenteses
 if len(x) > 0 :
     print x
 
@@ -17,7 +18,7 @@ if len(x) > 0 :
 # getStrFloat(string)→ list de string
 
 def getStrFloat(valStr):
-    regex = r'([0-9.]+\d+)' #  float numero (yyy.xxxx) um ou mais antes de '.' AND um ou mais depois de '.'  
+    regex = r'([0-9.]+\d+)' 
     return re.findall(regex, valStr)
 
 if __name__ == '__main__':
@@ -31,5 +32,3 @@ if __name__ == '__main__':
         
     # run: python3 reFloatNumber.py
     
-
-

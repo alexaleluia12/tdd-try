@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
 import re
-import urllib.request
+from urllib import request
 import codecs
-# TODO
 
 """
 import urllib
@@ -16,23 +15,18 @@ for link in links:
     print link    
 """
 
-
 # pageContent(url)
 #    return a generator where element is an line of the page
 
 # linksPage(iterable)
 #    return a iterable with all links in iterator
 
-
-
 def pageContent(url):
-    response = urllib.request.urlopen(url)
+    response = request.urlopen(url)
     if response:
         for i in response:
-            yield codecs.decode(i, 'utf8', 'ignore')
+            yield codecs.decode(i, 'utf-8', 'ignore')
             
-
-
 def linksPage(iterable):
     regex = r"""href=["'](https?://.*?)["']""" # suport http and https
     strContent = " ".join(iterable)
@@ -47,5 +41,3 @@ if __name__ == '__main__':
         
     # run: $ python3 urlLinks.py
     
-
-        

@@ -3,7 +3,6 @@
 import unittest
 import sys
 
-
 sys.path.insert(1, '..')
 from mod import reverseWord as rw
 
@@ -22,5 +21,3 @@ class ReverseWordTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-        

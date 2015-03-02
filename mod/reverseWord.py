@@ -51,7 +51,5 @@ if __name__ == '__main__':
     valStr = again()
     print(invert(valStr))
 
-    
     # run: $ python3 reverseWord.py
 
-        

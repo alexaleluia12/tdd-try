@@ -15,16 +15,19 @@ print res
 
 """
 
-# mapWords(str) → retorna uma lista de tupla, cada tupla na forma (intLength, word)
-# getWords(list) → retorna uma lista de string in order da maior para a menor
+# mapWords(str) → 
+#    return an list of tupla, where each tupla is like (intLength, word)
+
+# getWords(list) → 
+#    return an generetor of string, order: big to small
 
 def mapWords(valStr):
-    return list( map(lambda x: (len(x), x), valStr.split()) )
+    return list(map(lambda x: (len(x), x), valStr.split()))
     
 def getWords(valList):
-    copy = valList
+    copy = valList.copy()
     copy.sort(reverse=True)
-    return list( map(lambda x: x[1], copy) )
+    return map(lambda x: x[1], copy)
     
 
 if __name__ == '__main__':
@@ -37,6 +40,4 @@ if __name__ == '__main__':
     for i in getWords(myList):
         print(i)        
 
-    
-
-    
+    # run: python3 str_tuple.py

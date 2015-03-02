@@ -8,9 +8,10 @@ line2 = 'Python is awesome \n'
 novoArq.write(line2)  # vai escrever na linha 1
 novoArq.close()    
 """
-# write(connFile, strContent) → Boll
+# write(connFile, strContent) → Bool
 
 def write(connFile, strContent):
+    # file.write() → return a number o string that was written
     amountWriting = connFile.write(strContent)
     return amountWriting > 0
     

@@ -1,33 +1,27 @@
 #!/usr/bin/env python3
 
-import sys, os
+import sys
 import unittest
 
-sys.path.insert(1, os.path.join('..'))
+sys.path.insert(1, '..')
 
 from mod import writeInFile as wf
 
-def excludeFile(strName):
-    os.remove(strName)
-    return not os.path.exists(strName)
+class MockOpen:
+    def write(self, content):
+        return len(content)
+    
+    def close(self):
+        return True
 
 class WriteInFileTest(unittest.TestCase):
-        
+    
     def test_write(self):
-        conn = open('aux/any.txt', 'w')
-        self.assertTrue(wf.write(conn, 'oi alex'))
-        conn.close()
-        excludeFile('aux/any.txt')
-
-class TestHelperFunction(unittest.TestCase):
-
-    def test_excludeFile(self):# this function was definid in this file
-        open('aux/x.txt', 'w').close()
-        self.assertTrue(excludeFile('aux/x.txt'))    
-            
+        mkFile = MockOpen()
+        self.assertTrue(wf.write(mkFile, 'oi alex'))
+        self.assertFalse(wf.write(mkFile, ''))
+        mkFile.close()
 
 if __name__ == '__main__':
     unittest.main()
 
-
-        

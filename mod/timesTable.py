@@ -35,8 +35,8 @@ for i in range(10):
 
 def sanityEnter(val, vtype, interval=None):
     if type(str) != type(vtype):#
-        raise(TypeError("{0} invalid type 'try: \
-              int or str'".format(repr(vtype))))
+        raise TypeError("{0} invalid type 'try: int or str'"\
+                       .format(repr(vtype)))
     valBool = type(val) == vtype
     if interval == None:
         return valBool

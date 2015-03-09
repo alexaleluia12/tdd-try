@@ -22,10 +22,10 @@ for i in fi_email:
         else:
             di_diasSemana[i[2]] = di_diasSemana[i[2]] + 1
 
-print di_diasSemana    
+print di_diasSemana
 """
 # the axCounter module handle with all this thing
- 
+
 if __name__ == '__main__':
     FILE = os.path.join('static', 'mbox-short.txt')
     regex = r'\bFrom .+' # start with 'From ' and end with any thing
@@ -35,5 +35,5 @@ if __name__ == '__main__':
     weekdays = axCounter.getAllPosionedElement(lstContent, 2)
     daysCounts = axCounter.mapCounter(weekdays)
     print(daysCounts)
-        
+    # run: python3 dayEmailCount.py
 

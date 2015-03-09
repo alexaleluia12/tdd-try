@@ -12,7 +12,7 @@ html = urllib.urlopen(url).read()
 links = re.findall('href="(http://.*?)"', html) # retorna uma lista
 
 for link in links:
-    print link    
+    print link
 """
 
 # pageContent(url)
@@ -24,8 +24,9 @@ for link in links:
 """
 Case this code not work check Your DNS internet service. 
 see: http://en.wikipedia.org/wiki/DNS_hijacking
+(request invalid url still return some thing)
 
-I indicate wear http://opendns.com/ 
+I indicate wear http://opendns.com/
 """
 
 def pageContent(url):
@@ -33,18 +34,18 @@ def pageContent(url):
     if response:
         for i in response:
             yield codecs.decode(i, 'utf-8', 'ignore')
-            
+
 def linksPage(iterable):
     regex = r"""href=["'](https?://.*?)["']""" # suport http and https
     strContent = " ".join(iterable)
     return re.findall(regex, strContent) 
-    
+
 if __name__ == '__main__':
     url = input('Enter with url like http://google.com\n ->: ')
     links = linksPage(pageContent(url))
     print('###')
     for link in links:
         print(link)
-        
+
     # run: $ python3 urlLinks.py
-    
+

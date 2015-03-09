@@ -15,7 +15,7 @@ if len(x) > 0 :
     print x
 
 """
-# getStrFloat(string)→ list de string
+# getStrFloat(string)→ list of string
 
 def getStrFloat(valStr):
     regex = r'([0-9.]+\d+)' 
@@ -29,6 +29,6 @@ if __name__ == '__main__':
 
     for el in getStrFloat(strVal):
         print(el)
-        
+
     # run: python3 reFloatNumber.py
-    
+

@@ -24,10 +24,11 @@ print invertida
     
 """
 # checkWord(string)
-#    return a the same string whether it have no number and the length is greater than zero. Otherwise return False
+#    return the same string whether it have no number 
+#    and the length is greater than zero. Otherwise return False
 
 # invert(string)
-#    return the string inverted. 'oi' ->  'io'
+#    return the inverted string. 'oi' ->  'io'
 
 def checkWord(valStr):
     regex = r'\d+'
@@ -36,10 +37,10 @@ def checkWord(valStr):
     if re.search(regex, valStr):
         return False
     return valStr
-    
+
 def invert(valStr):
     return valStr[::-1]
-    
+
 if __name__ == '__main__':
     def again():
         while True:
@@ -47,7 +48,7 @@ if __name__ == '__main__':
             if not checkWord(userEnter):
                 continue
             return userEnter
-    
+
     valStr = again()
     print(invert(valStr))
 

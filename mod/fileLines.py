@@ -23,13 +23,12 @@ arqui.close()
 
 def countLine(iterableFile):
     return len(list(iterableFile))
-        
-        
+
 if __name__ == '__main__':
     fileName = sys.argv[1]
     with open(fileName) as f:
         numberLines = countLine(f) # the f (file object) suport interation
     print("{0}> {1}".format(fileName, numberLines))
-    
+
     # run: python3 fileLines.py pathFile
 

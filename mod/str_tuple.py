@@ -19,25 +19,25 @@ print res
 #    return an list of tupla, where each tupla is like (intLength, word)
 
 # getWords(list) → 
-#    return an generetor of string, order: big to small
+#    return an generetor of string, order: decreasing
 
 def mapWords(valStr):
     return list(map(lambda x: (len(x), x), valStr.split()))
-    
+
 def getWords(valList):
     copy = valList.copy()
     copy.sort(reverse=True)
     return map(lambda x: x[1], copy)
-    
+
 
 if __name__ == '__main__':
     txt = 'but soft what light in yonder window breaks'
     myList = mapWords(txt)
     for length, word in myList:
         print('{0} {1}'.format(length, word))
-    
+
     print()
     for i in getWords(myList):
-        print(i)        
+        print(i)
 
     # run: python3 str_tuple.py

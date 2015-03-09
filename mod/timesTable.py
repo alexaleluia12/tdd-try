@@ -19,22 +19,24 @@ for i in range(10):
     
     i = i + 1
     print "%d  x %d : %d" % (entraValida, i, i*entraValida)
-    
 """
 
 # sanityEnter(val, vtype[,interval])
-#    return a boll value True if right False otherwise 
-#    if interval is given it also check whether val is between interval
-#    (val value that we want check)
-#    (vtype be class built-in python like str, int, dict)
-#    (interval like this (begin, end) inclusive integers)
+#    return a boll `value` True if right False otherwise 
+#    if `interval` is given it also check whether `val` is between `interval`
+#    (`val` value that we want check)
+#    (`vtype` be class built-in python like str, int, dict)
+#    (`interval` like this (begin, end) inclusive integers)
 
 # getTimesTab(val, interval=(1, 10))
 #    return a generator where each is like this (a, b, c)
-#    ( interval -> inclusive like: (begin, end) )
+#    ( `interval` -> inclusive like: (begin, end) )
+#    (`val` the times table you want, will be the first element
+#     a in (a, b, c) )
 
 def sanityEnter(val, vtype, interval=None):
-    if type(str) != type(vtype):#
+    # check if `vtype` is a built-in Python class
+    if not isinstance(vtype, type):
         raise TypeError("{0} invalid type 'try: int or str'"\
                        .format(repr(vtype)))
     valBool = type(val) == vtype
@@ -42,16 +44,16 @@ def sanityEnter(val, vtype, interval=None):
         return valBool
     assert type(val) == type(interval[0]) == type(interval[1]), "the \
                                     interval need to be the same type"
-                           
+
     intervalBool = val >= interval[0] and val <= interval[1]
-    return valBool and intervalBool    
-        
-    
+    return valBool and intervalBool
+
+
 def getTimesTab(val, interval=(1, 10)):    
     for i in range(interval[0], interval[1] + 1):
         yield (val, i, i * val)
-    
-    
+
+
 if __name__ == '__main__':
     val = int(sys.argv[1])
     if sanityEnter(val, int, (1, 10)):
@@ -59,4 +61,4 @@ if __name__ == '__main__':
             print(" {0} x {1} = {2}".format(*el))
 
     # run: python3 timesTable.py number
-  
+

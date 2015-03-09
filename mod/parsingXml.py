@@ -15,26 +15,27 @@ data = '''
 tree = ET.fromstring(data)
 print 'Name:',tree.find('name').text
 print 'Attr:',tree.find('email').get('hide')
-print type(data)    
+print type(data)
 """
 # getTag(tagName, xmlData)
-#    return a tagName objec 'xml.etree.ElementTree.Element'
-#    from 'xmlData'
+#    return a tagName objec `xml.etree.ElementTree.Element`
+#    from `xmlData`
 #    'xmlData' is an string
 
 # getTagText(tagName, xmlData)
-#    return the text of the 'tagName' from 'xmlData' string
-#    'tagName' and 'xmlData' need be string
-#    <name>alex</name> -> alex
+#    return the text of the `tagName` from `xmlData` string
+#    (`tagName` and `xmlData` need be string)
+#     <name>alex</name> -> alex
+
 
 # getTagAttr(attr, tagName, xml)
-#    return the atribute value from 'tagName' found in 'xmlData' string
-#    'attr' shold be atribute in 'tagName'
-#    'attr', 'tagName', 'xmlData' are all string
+#    return the atribute value from `tagName` found in `xmlData` string
+#    (`attr` shold be atribute in `tagName`)
+#    (`attr`, `tagName`, `xmlData` are all string)
 
 def getTag(tagName, xmlData):
     xmlData = treeXml.fromstring(xmlData)
-    return xmlData.find(tagName)    
+    return xmlData.find(tagName)
 
 def getTagText(tag, xmlData):
     tagObj = getTag(tag, xmlData)
@@ -56,7 +57,8 @@ if __name__ == '__main__':
     </person>'''
     
     print('Name: {0}'.format(getTagText('name', data)))
-    print('Attr of email.hide: {0}'.format(getTagAttr('hide', 'email', data)))
-    
+    print('Attr of email.hide: {0}'.\
+          format(getTagAttr('hide', 'email', data)))
+
     # run: python3 parsingXml.py
 

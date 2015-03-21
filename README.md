@@ -8,6 +8,17 @@ Feel free to Contribute
 
 > Require Python >= 3.3
 
+#### Be sure `PYTHONPATH` is defined and have '..'
+Posix
+```sh 
+$ export PYTHONPATH=$PYTHONPATH:..
+```
+
+Windows
+```sh 
+> set PYTHONPATH=%PYTHONPATH%;..
+```
+
 ---
 > Run all tests: 
 

@@ -3,10 +3,7 @@
 import sys
 import pprint
 
-try: 
-    from . import forExample1 as fore
-except:
-    import forExample1 as fore
+from mod import forExample1 as fore
 
 """
 vetor = [2, 4, 6]
@@ -17,7 +14,7 @@ print vetor
 
 # timesElements(valList, intValue)
 #    return a list where each element is times by `intValue`
-#....(`valList` is list type)
+#    (`valList` is list type)
 #    (`intValue` is int type)
 
 def timesElements(vIter, val): 

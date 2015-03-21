@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 
 import unittest
-import sys
 
-
-sys.path.insert(1, '..')
 from mod import timesTable
 
 class TabuadaTest(unittest.TestCase):

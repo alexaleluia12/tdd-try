@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 
-import sys, os
-import unittest
 
-sys.path.insert(1, os.path.join('..'))
+import unittest
 
 from mod import str_tuple as stu
 
@@ -22,6 +20,6 @@ class StrTupleTest(unittest.TestCase):
             ['joine', 'alex', 'now']
         )
 
- 
+
 if __name__ == '__main__':
     unittest.main()

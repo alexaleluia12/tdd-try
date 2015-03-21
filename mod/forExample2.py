@@ -2,10 +2,7 @@
 
 import sys
 
-try: 
-    from . import forExample1 as fore
-except:
-    import forExample1 as fore
+from mod import forExample1 as fore
 
 """
 maior = None  

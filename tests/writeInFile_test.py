@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
-import sys
 import unittest
-
-sys.path.insert(1, '..')
 
 from mod import writeInFile as wf
 
@@ -15,7 +12,7 @@ class MockOpen:
         return True
 
 class WriteInFileTest(unittest.TestCase):
-    
+
     def test_write(self):
         mkFile = MockOpen()
         self.assertTrue(wf.write(mkFile, 'oi alex'))

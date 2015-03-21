@@ -2,9 +2,7 @@
 
 import unittest
 import os
-import sys
 
-sys.path.insert(1, os.path.join('..'))
 import mod.commonWord as cw
 
 class CommonWordTest(unittest.TestCase):    

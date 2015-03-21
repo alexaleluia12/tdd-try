@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 
 import unittest
-import sys
 
-sys.path.insert(1, '..')
 from mod import howManyFrom as hmf
 
 class HowManyFromTest(unittest.TestCase):
@@ -13,11 +11,9 @@ class HowManyFromTest(unittest.TestCase):
              hmf.iterableFrom(['kdi d joe', 'From xckco@a', 'dkkk do']), 
              ['From xckco@a']   
         )
-    
+
     def test_amount(self):
         self.assertEqual(hmf.amount(['e', 'e', 'e']), 3)
 
 if __name__ == '__main__':
     unittest.main()
-
-        

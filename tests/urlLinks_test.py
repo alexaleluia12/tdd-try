@@ -2,9 +2,7 @@
 
 import unittest
 from unittest import mock
-import sys
 
-sys.path.insert(1, '..')
 from mod import urlLinks
 
 
@@ -52,7 +50,7 @@ class UrlLinksTest(unittest.TestCase):
              "https://www.bbc.com/"
             ]
         )
-    
+
 if __name__ == '__main__':
     unittest.main()
 

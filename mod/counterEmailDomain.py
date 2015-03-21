@@ -2,10 +2,7 @@
 
 import os
 
-try:
-    import axCounter
-except:
-    from . import axCounter    
+from mod import axCounter
 
 """
 fi_email = open('mbox-short.txt', 'r')

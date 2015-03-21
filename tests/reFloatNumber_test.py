@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
 import unittest
-import sys
-
-sys.path.insert(1, '..')
 
 from mod import reFloatNumber as rfn
 
@@ -18,7 +15,7 @@ class ReFloatNumberTest(unittest.TestCase):
         )
         self.assertListEqual(rfn.getStrFloat(str2), ['89.903', '9.0'])
         self.assertListEqual(rfn.getStrFloat(str3), [])
-        
+
 
 if __name__ == '__main__':
     unittest.main()
